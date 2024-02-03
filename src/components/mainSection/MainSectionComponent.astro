@@ -1,69 +1,89 @@
 ---
 import Title from "./Title.astro";
+import RippleSpan from "./RippleSpan.astro";
+import ThemePicker from "./ThemePicker.astro";
 ---
 
 <section
   id="landing"
-  class="w-screen h-screen overflow-hidden flex flex-col relative  text-[#FFE4B5]"
+  class="w-screen h-screen overflow-hidden flex flex-col relative text-textColor transition duration-500"
 >
-<span class="circle absolute ripple aspect-square w-[150vw] left-full  top-1/2 -translate-y-1/2 -translate-x-1/2 rounded-full border-[#ff6347] opacity-0 border-[0.2rem] box-content p-2 -z-10 laptop:rounded-[50%] laptop:w-[100vw] animate-ripple bg-green-400
-            laptopL:left-[120%]"/>
-
-  <div class="h-4/5 flex flex-col ML:flex-row ">
-  <nav class="w-full h-1/4 flex text-xs leading-3  font-data font-medium pl-[5%]
+  <RippleSpan id="rootColor" hexColor="#ff0f48"/>
+  <RippleSpan id="rainColor" hexColor="#3498db"/>
+  <RippleSpan id="goldColor" hexColor="#00ff00"/>
+  
+  <div class="h-4/5 flex flex-col ML:flex-row">
+    <nav
+      class="w-full h-1/4 flex text-xs leading-3 font-data font-medium pl-[5%]
               MM:text-sm MM:leading-4 ML:flex-col
-              ML:w-2/5 
-              ML:h-2/5 ML:relative ML:pl-[2.5%] ML:top-[0%] ML:pt-[2.5%] ML:justify-between 
-              tablet:mt-[4%] tablet:pt-[0] 
-              laptop:text-2xl 
-              laptop:w-full laptop:flex-row laptop:relative laptop:mt-[2.3%]">
-    <div class="w-2/5   justify-around  flex flex-col  h-2/3 
+              ML:w-1/5
+              ML:h-2/5 ML:relative  ML:top-[0%] ML:pt-[2.5%] ML:justify-between ML:text-xs
+              
+              tablet:mt-[4%] tablet:pt-[0] tablet:text-xl
+              laptop:text-3xl laptop:justify-start latpop: space-y-4 
+              "
+    >
+      <div
+        class="w-2/5 flex flex-col h-2/3 pt-4 space-y-2
                 ML:w-full ML:h-auto ML:justify-start ML:height-1/2
-                laptop:w-1/3
-                ">
-      <span class="font-semibold">FACUNDO TALAVERA</span>
-      <a
-        href="#projects"
-        class="py-[0.25rem]  bg-[#FFE4B5]  text-black 
-              ML:mr-[5%] ML:my-[.25rem] ML:w-full ML:w-2/3
-              laptop:w-[17%] laptop:px-[.5rem] laptop:py-0 laptop:text-xl laptop:absolute laptop:left-[95%]"
-        >TALK TO ME</a
+                laptop:space-y-4
+                "
       >
-    </div>
-    <div class="w-3/5   pr-[5%] h-2/3 flex justify-around mt-1 flex-col text-right 
-                MM:justify-start 
-                ML:height-1/2 ML:h-auti ML:w-full ML:text-left ML:pl-[5%]
-                laptop:flex-row laptop:mt-[0] laptop:px-0 tablet:pl-0">
-      
-      <span class="">FULL STACK JUNIOR DEVELOPER</span>
-      <span class="  py-[0.25rem] ML:py-[0.25rem]  MM:py-0 laptop:py-[0] ">AVAILABLE FOR REMOTE WORK</span>
-    </div>
-  </nav>
-  <div class="h-3/4 w-full flex 
+        <span class="font-semibold">FACUNDO TALAVERA</span>
+        <a
+          href="#projects"
+          class="py-[0.25rem] bg-textColor text-black transition-all duration-500
+              ML:mr-[5%] ML:my-[.25rem] ML:w-full ML:px-1
+              tablet:w-full
+             
+              "
+          >TALK TO ME</a
+        >
+        <ThemePicker/>
+      </div>
+      <div
+        class="w-3/5 pr-[5%] h-2/3 flex justify-start mt-1 flex-col text-right space-y-2
+                MM:justify-start
+                ML:w-full ML:text-left 
+                tablet:mt-0
+                laptop:space-y-4
+                "
+      >
+        <span class="">FULL STACK JUNIOR DEVELOPER</span>
+        <span class="py-[0.25rem] ML:py-[0.25rem] MM:py-0 laptop:py-[0]"
+          >AVAILABLE FOR REMOTE WORK</span
+        >
+      </div>
+    </nav>
+    <div class="h-3/4 w-full flex
               ML:h-full ML:w-3/5 ML:ml-[10%]">
-    <div class="w-2/5 h-full ML:w-3/5 "></div>
-    <Title/>
+      <div class="w-1/5 ML:w-3/5"></div>
+      <Title />
+    </div>
   </div>
-</div>
-  <div class="h-1/5 w-[90%] mt-[10%] pt-[8%] ml-[5%] pr-[5%] 
-              ML:absolute ML:w-2/5 ML:top-2/3 
-              tablet:top-[64%] tablet:ml-[4%] 
-              laptop:top-[58%] laptopL:top-[43%] laptopL:w-3/5 laptop:ml-[2.9%]">
+  <div
+    class="h-1/5 w-[90%] mt-[10%] pt-[8%] ml-[5%] pr-[5%]
+              ML:absolute ML:w-2/5 ML:top-2/3
+              tablet:top-[64%] tablet:ml-[4%]
+              laptop:ml-0 laptop:pl-[5%] laptop:mt-[15%]
+              laptopL:top-[43%] laptopL:w-3/5  "
+  >
     <span
-      class="font-semibold pr-[5%] pt-4 text-xs block uppercase 
-            MM:text-sm MM:pt-0 
-            ML:text-sm ML:pt-0 
-            laptop:text-2xl
+      class="font-semibold pr-[5%] pt-4 text-xs uppercase
+            MM:text-sm MM:pt-0 MM:absolute MM:bottom-[2.5%]
+            ML:text-sm ML:pt-0
+            tablet:text-xl 
+            laptop:text-3xl laptop:pr-0
             laptopL:text-3xl"
       >I am a fullstack developer based in Misiones, Argentina who likes to
       craft digital solutions.</span
     >
   </div>
   <svg class="absolute hidden">
-      <filter id="texture">
-        <feTurbulence type="turbulence" baseFrequency="0.65"/>
-      </filter>
-    </svg>
+    <filter id="texture">
+      <feTurbulence type="turbulence" baseFrequency="0.65"></feTurbulence>
+    </filter>
+  </svg>
 </section>
 <style>
   #landing::before {
@@ -75,17 +95,16 @@ import Title from "./Title.astro";
     margin: 0;
     box-sizing: border-box;
     padding: 0;
-    filter: url('#texture');
+    filter: url("#texture");
     z-index: -1;
   }
 
-
-
   #landing {
+    transition: 2s;
     background: radial-gradient(
       circle at 100%,
       black 50%,
-      #ff6347 55%,
+      var(--gradient-via) 55%,
       black 75%
     );
     mix-blend-mode: hard-light;
@@ -93,24 +112,25 @@ import Title from "./Title.astro";
 
   @media (min-width: 768px) {
     #landing {
-    background: radial-gradient(
-      circle at 120%,
-      black 50%,
-      #ff6347 55%,
-      black 75%
-    );
-    mix-blend-mode: hard-light;
+      background: radial-gradient(
+        circle at 120%,
+        black 50%,
+        var(--gradient-via) 55%,
+        black 75%
+      );
+      mix-blend-mode: hard-light;
+    }
   }
-  }
+  
   @media (min-width: 1440px) {
     #landing {
-    background: radial-gradient(
-      circle at 120%,
-      black 25%,
-      #ff6347 45%,
-      black 46%
-    );
-    mix-blend-mode: hard-light;
-  }
+      background: radial-gradient(
+        circle at 120%,
+        black 25%,
+        var(--gradient-via) 45%,
+        black 46%
+      );
+      mix-blend-mode: hard-light;
+    }
   }
 </style>

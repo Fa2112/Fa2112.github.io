@@ -3,6 +3,10 @@ export default {
   content: ["./src/**/*.{html,js,astro}"],
   theme: {
     extend: {
+      colors: {    
+        gradientVia: "var(--gradient-via)",
+        textColor: "var(--text-color)"
+      },
       screens: {
         MM: "375px",
         ML: "425px",
@@ -21,7 +25,7 @@ export default {
             opacity: "1",
           },
           
-          "100%": {
+          "80%": {
             opacity: "0.5",
             height: "400vw",
             width: "400vw",
@@ -31,7 +35,7 @@ export default {
       },
       
       animation: {
-        ripple: "ripple 3s linear  infinite",
+        ripple: "ripple 3s linear",
       },
       animationDelay: {
         0.1: "200ms",
