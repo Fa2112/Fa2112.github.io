@@ -2,6 +2,7 @@
 import Title from "./Title.astro";
 import RippleSpan from "./RippleSpan.astro";
 import ThemePicker from "./ThemePicker.astro";
+let previousColor: string = "#ff0f48";
 ---
 
 <section
@@ -39,7 +40,7 @@ import ThemePicker from "./ThemePicker.astro";
               "
           >TALK TO ME</a
         >
-        <ThemePicker/>
+        <ThemePicker previousColor={previousColor}/>
       </div>
       <div
         class="w-3/5 pr-[5%] h-2/3 flex justify-start mt-1 flex-col text-right space-y-2
