@@ -7,3 +7,24 @@ import MainLayout from "../layouts/MainLayout.astro";
 </head>
 <MainLayout />
 
+<style>
+  @tailwind base;
+  @layer base {
+    :root {
+      --gradient-via: #ff0f48;
+      --text-color: #fad190;
+    }
+    .rain {
+      --gradient-via: #3498db;
+      --text-color: #f0f8ff;
+    }
+    .gold {
+      --gradient-via: #00ff00;
+      --text-color: #ffd700;
+    }
+    .tomato {
+      --gradient-via: #ff6347;
+      --text-color: #ffe4b5;
+    }
+  }
+</style>

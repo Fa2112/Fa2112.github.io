@@ -5,21 +5,3 @@
 
 
 
-@layer base {
-    :root {
-        --gradient-via: #ff0f48; 
-        --text-color: #fad190;
-    }
-    .rain {
-            --gradient-via:#3498db;
-            --text-color:#F0F8FF;
-    }
-    .gold {
-            --gradient-via:#00ff00;
-            --text-color:#FFD700;
-    }
-    .tomato {
-            --gradient-via:#ff6347;
-            --text-color:#FFE4B5;
-    }
-}
