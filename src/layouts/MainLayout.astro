@@ -37,6 +37,25 @@ import LanguagesSection from "../components/languagesSection/LanguagesSectionCom
       margin: 0;
     }
 
+    @tailwind base;
+    @layer base {
+    :root {
+        --gradient-via: #ff0f48; 
+        --text-color: #fad190;
+    }
+    .rain {
+            --gradient-via:#3498db;
+            --text-color:#F0F8FF;
+    }
+    .gold {
+            --gradient-via:#00ff00;
+            --text-color:#FFD700;
+    }
+    .tomato {
+            --gradient-via:#ff6347;
+            --text-color:#FFE4B5;
+    }
+}
     .movement {
       transition: all;
       transition-duration: 500ms;
