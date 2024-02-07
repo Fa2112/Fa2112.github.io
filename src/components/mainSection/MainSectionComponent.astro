@@ -2,53 +2,47 @@
 import Title from "./Title.astro";
 import RippleSpan from "./RippleSpan.astro";
 import ThemePicker from "./ThemePicker.astro";
-let previousColor: string = "#ff0f48";
 ---
 
 <section
   id="landing"
   class="w-screen h-screen overflow-hidden flex flex-col relative text-textColor transition duration-500"
 >
-  <RippleSpan id="rootColor" hexColor="#ff0f48"/>
-  <RippleSpan id="rainColor" hexColor="#3498db"/>
-  <RippleSpan id="goldColor" hexColor="#00ff00"/>
-  
+  <RippleSpan id="rootColor" hexColor="#ff0f48" />
+  <RippleSpan id="rainColor" hexColor="#3498db" />
+  <RippleSpan id="goldColor" hexColor="#00ff00" />
+
   <div class="h-4/5 flex flex-col ML:flex-row">
     <nav
       class="w-full h-1/4 flex text-xs leading-3 font-data font-medium pl-[5%]
               MM:text-sm MM:leading-4 ML:flex-col
               ML:w-1/5
-              ML:h-2/5 ML:relative  ML:top-[0%] ML:pt-[2.5%] ML:justify-between ML:text-xs
+              ML:h-2/5 ML:relative ML:top-[0%] ML:pt-[2.5%] ML:justify-between ML:text-xs
               
-              tablet:mt-[4%] tablet:pt-[0] tablet:text-xl
-              laptop:text-3xl laptop:justify-start latpop: space-y-4 
-              "
+              tablet:mt-[4%] tablet:pt-[0]
+              laptop:text-lg laptop:justify-start latpop: space-y-4"
     >
       <div
         class="w-2/5 flex flex-col h-2/3 pt-4 space-y-2
                 ML:w-full ML:h-auto ML:justify-start ML:height-1/2
-                laptop:space-y-4
-                "
+                laptop:space-y-4"
       >
         <span class="font-semibold">FACUNDO TALAVERA</span>
         <a
           href="#projects"
           class="py-[0.25rem] bg-textColor text-black transition-all duration-500
               ML:mr-[5%] ML:my-[.25rem] ML:w-full ML:px-1
-              tablet:w-full
-             
-              "
+              tablet:w-full"
           >TALK TO ME</a
         >
-        <ThemePicker previousColor={previousColor}/>
+        <ThemePicker />
       </div>
       <div
         class="w-3/5 pr-[5%] h-2/3 flex justify-start mt-1 flex-col text-right space-y-2
                 MM:justify-start
-                ML:w-full ML:text-left 
+                ML:w-full ML:text-left
                 tablet:mt-0
-                laptop:space-y-4
-                "
+                laptop:space-y-4"
       >
         <span class="">FULL STACK JUNIOR DEVELOPER</span>
         <span class="py-[0.25rem] ML:py-[0.25rem] MM:py-0 laptop:py-[0]"
@@ -56,8 +50,7 @@ let previousColor: string = "#ff0f48";
         >
       </div>
     </nav>
-    <div class="h-3/4 w-full flex
-              ML:h-full ML:w-3/5 ML:ml-[10%]">
+    <div class="h-3/4 w-full flex">
       <div class="w-1/5 ML:w-3/5"></div>
       <Title />
     </div>
@@ -66,16 +59,15 @@ let previousColor: string = "#ff0f48";
     class="h-1/5 w-[90%] mt-[10%] pt-[8%] ml-[5%] pr-[5%]
               ML:absolute ML:w-2/5 ML:top-2/3
               tablet:top-[64%] tablet:ml-[4%]
-              laptop:ml-0 laptop:pl-[5%] laptop:mt-[15%]
-              laptopL:top-[43%] laptopL:w-3/5  "
+              laptop:top-[54%]
+              laptopL:top-[52%] laptopL:w-3/5"
   >
     <span
       class="font-semibold pr-[5%] pt-4 text-xs uppercase
             MM:text-sm MM:pt-0 MM:absolute MM:bottom-[2.5%]
             ML:text-sm ML:pt-0
-            tablet:text-xl 
-            laptop:text-3xl laptop:pr-0
-            laptopL:text-3xl"
+            tablet:mb-4
+            laptop:text-lg laptop:pr-0"
       >I am a fullstack developer based in Misiones, Argentina who likes to
       craft digital solutions.</span
     >
@@ -122,7 +114,7 @@ let previousColor: string = "#ff0f48";
       mix-blend-mode: hard-light;
     }
   }
-  
+
   @media (min-width: 1440px) {
     #landing {
       background: radial-gradient(

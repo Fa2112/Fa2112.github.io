@@ -1,68 +1,102 @@
 ---
+
 ---
 
-<div id="themepickerId" class=" top-24  rounded-lg p-1/2 overflow-hidden absolute z-50 flex  justify-center items-center aspect-square peer
-				ML:mr-[5%] ML:my-[.25rem] ML:top-[17rem] 
-				tablet:top-[25rem]
-                laptop:absolute laptop:left-[125%] laptop:top-2">
-    <div class="h-8  aspect-square rounded-lg border-4 bg-gradientVia border-textColor hover:cursor-pointer transition laptop:h-12"></div>
-</div>	
-<div class="top-[8.25rem] rounded-lg p-1/2 overflow-hidden   w-8 absolute z-50 flex flex-col justify-evenly items-center transition h-4 invisible  laptop:w-12
-
+<div
+  id="themepickerId"
+  class="top-24 rounded-lg p-1/2 overflow-hidden absolute z-50 flex justify-center items-center aspect-square peer
+				ML:mr-[5%] ML:my-[.25rem] ML:top-[17rem]
+				tablet:top-[13rem]
+                laptop:absolute laptop:left-[125%] laptop:top-2"
+>
+  <div
+    class="h-8 aspect-square rounded-lg border-4 bg-gradientVia border-textColor hover:cursor-pointer transition"
+  >
+  </div>
+</div>
+<div
+  class="top-[8.25rem] rounded-lg p-1/2 overflow-hidden w-8 absolute z-50 flex flex-col justify-evenly items-center transition h-4 invisible
  			ML:mr-[5%] ML:my-[.25rem] ML:top-[19.25rem]
-			tablet:top-[27.25rem]
-            laptop:absolute laptop:left-[125%] laptop:top-14
-			peer-hover:visible hover:visible peer-hover:h-28 hover:h-28 
-			laptop:peer-hover:h-44 laptop:hover:h-44
-			">
-                        <div id="root" class="h-8 laptop:h-[3rem]  aspect-square rounded-lg border-4 bg-[#ff0f48] border-[#fad190] hover:cursor-pointer transition"></div>
-                        <div id="rain" class="h-8 laptop:h-[3rem]  aspect-square rounded-lg border-4 bg-[#3498db] border-[#F0F8FF] hover:cursor-pointer transition"></div>
-                        <div id="gold" class="h-8 laptop:h-[3rem]  aspect-square rounded-lg border-4 bg-[#00ff00] border-[#FFD700] hover:cursor-pointer transition"></div>
-
-                </div>
+			tablet:top-[15.25rem]
+            laptop:absolute laptop:left-[125%] laptop:top-10
+			peer-hover:visible hover:visible peer-hover:h-28 hover:h-28"
+>
+  <div
+    id="root"
+    class="h-8 aspect-square rounded-lg border-4 bg-[#ff0f48] border-[#fad190] hover:cursor-pointer transition"
+  >
+  </div>
+  <div
+    id="rain"
+    class="h-8 aspect-square rounded-lg border-4 bg-[#3498db] border-[#F0F8FF] hover:cursor-pointer transition"
+  >
+  </div>
+  <div
+    id="gold"
+    class="h-8 aspect-square rounded-lg border-4 bg-[#00ff00] border-[#FFD700] hover:cursor-pointer transition"
+  >
+  </div>
+</div>
 <script>
-    function rain() {
-			
-				document.body.classList.add('rain');
-				document.body.classList.remove('gold')
-                document.getElementById('rainColor').classList.add('animate-ripple')
-				setTimeout(function () {
-        			document.getElementById('rainColor').classList.remove('animate-ripple');
-    			}, 3000);
-    			
-			}
-			function gold() {
-				document.body.classList.add('gold');
-				document.body.classList.remove('rain')
-                document.getElementById('goldColor').classList.add('animate-ripple')
-				setTimeout(function () {
-        			document.getElementById('goldColor').classList.remove('animate-ripple');
-    			}, 3000);
-			}
-            function root() {
-				document.body.classList.remove('rain')
-				document.body.classList.remove('gold')
-                document.getElementById('rootColor').classList.add('animate-ripple')
-				setTimeout(function () {
-        			document.getElementById('rootColor').classList.remove('animate-ripple');
-    			}, 3000);
-            }
+  let previousColor = "#ff0f48";
+  function rain() {
+    document.body.classList.add("rain");
+    document.body.classList.remove("gold");
+    document
+      .getElementById("rainColor")
+      .classList.add(`border-[${previousColor}]`);
+    previousColor = "#3498db";
+    document.getElementById("rainColor").classList.add("animate-ripple");
 
-			document.getElementById('rain')!.addEventListener('click', rain)
-			document.getElementById('gold')!.addEventListener('click', gold)
-			document.getElementById('root')!.addEventListener('click', root)
-            
-			function colorPallette() {
-			if(window.matchMedia("(prefers-color-scheme:dark)").matches) {
-				console.log("prefers dark scheme")
-			}
-				if(localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme:dark)").matches)) {
-					document.documentElement.classList.add("dark");
+    setTimeout(function () {
+      document.getElementById("rainColor").classList.remove("animate-ripple");
+    }, 3000);
+  }
+  function gold() {
+    document.body.classList.add("gold");
+    document.body.classList.remove("rain");
+    document
+      .getElementById("goldColor")
+      .classList.add(`border-[${previousColor}]`);
+    previousColor = "#00ff00";
+    document.getElementById("goldColor").classList.add("animate-ripple");
 
-					} else {
-						document.documentElement.classList.remove("dark")
-					}
-				}
-			colorPallette()
-			document.addEventListener('astro:beforeload', colorPallette)
+    setTimeout(function () {
+      document.getElementById("goldColor").classList.remove("animate-ripple");
+    }, 3000);
+  }
+  function root() {
+    document.body.classList.remove("rain");
+    document.body.classList.remove("gold");
+    document
+      .getElementById("rainColor")
+      .classList.add(`border-[${previousColor}]`);
+    previousColor = "#ff0f48";
+    document.getElementById("rootColor").classList.add("animate-ripple");
+
+    setTimeout(function () {
+      document.getElementById("rootColor").classList.remove("animate-ripple");
+    }, 3000);
+  }
+
+  document.getElementById("rain")!.addEventListener("click", rain);
+  document.getElementById("gold")!.addEventListener("click", gold);
+  document.getElementById("root")!.addEventListener("click", root);
+
+  function colorPallette() {
+    if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
+      console.log("prefers dark scheme");
+    }
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme:dark)").matches)
+    ) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }
+  colorPallette();
+  document.addEventListener("astro:beforeload", colorPallette);
 </script>

@@ -19,7 +19,7 @@ import LanguagesSection from "../components/languagesSection/LanguagesSectionCom
     />
   </head>
 
-  <body class="bg-black relative overflow-x-hidden m-0 p-0">
+  <body class="relative overflow-x-hidden m-0 p-0 bg-emerald-600">
     <MainSectionComponent />
 
     <LanguagesSection />
@@ -39,23 +39,23 @@ import LanguagesSection from "../components/languagesSection/LanguagesSectionCom
 
     @tailwind base;
     @layer base {
-    :root {
-        --gradient-via: #ff0f48; 
+      :root {
+        --gradient-via: #ff0f48;
         --text-color: #fad190;
+      }
+      .rain {
+        --gradient-via: #3498db;
+        --text-color: #f0f8ff;
+      }
+      .gold {
+        --gradient-via: #00ff00;
+        --text-color: #ffd700;
+      }
+      .tomato {
+        --gradient-via: #ff6347;
+        --text-color: #ffe4b5;
+      }
     }
-    .rain {
-            --gradient-via:#3498db;
-            --text-color:#F0F8FF;
-    }
-    .gold {
-            --gradient-via:#00ff00;
-            --text-color:#FFD700;
-    }
-    .tomato {
-            --gradient-via:#ff6347;
-            --text-color:#FFE4B5;
-    }
-}
     .movement {
       transition: all;
       transition-duration: 500ms;

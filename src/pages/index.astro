@@ -11,25 +11,43 @@ import MainLayout from "../layouts/MainLayout.astro";
 <MainLayout />
 
 <style>
-@tailwind base;
-@layer base {
+  @tailwind base;
+  @layer base {
     :root {
-        --gradient-via: #ff0f48; 
-        --text-color: #fad190;
+      --gradient-via: #ff0f48;
+      --text-color: #fad190;
     }
     .rain {
-            --gradient-via:#3498db;
-            --text-color:#F0F8FF;
+      --gradient-via: #3498db;
+      --text-color: #f0f8ff;
     }
     .gold {
-            --gradient-via:#00ff00;
-            --text-color:#FFD700;
+      --gradient-via: #00ff00;
+      --text-color: #ffd700;
     }
     .tomato {
-            --gradient-via:#ff6347;
-            --text-color:#FFE4B5;
+      --gradient-via: #ff6347;
+      --text-color: #ffe4b5;
     }
-}
+  }
 
+  body::-webkit-scrollbar {
+    width: 6px;
+  }
 
+  body::-webkit-scrollbar-track {
+    background: black;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--gradient-via);
+  }
+
+  body::-webkit-scrollbar {
+    height: 2px;
+  }
+
+  body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0px rgba(0,  0,  0,  0);
+  }
 </style>
