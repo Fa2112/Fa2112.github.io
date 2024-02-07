@@ -14,7 +14,8 @@ import ThemePicker from "./ThemePicker.astro";
 
   <div class="h-4/5 flex flex-col ML:flex-row">
     <nav
-      class="w-full h-1/4 flex text-xs leading-3 font-data font-medium pl-[5%]
+      id="sectionNav"
+      class="w-full h-1/4 flex text-xs leading-3 font-data font-medium pl-[5%] animate-navFadeIn
               MM:text-sm MM:leading-4 ML:flex-col
               ML:w-1/5
               ML:h-2/5 ML:relative ML:top-[0%] ML:pt-[2.5%] ML:justify-between ML:text-xs
@@ -56,7 +57,8 @@ import ThemePicker from "./ThemePicker.astro";
     </div>
   </div>
   <div
-    class="h-1/5 w-[90%] mt-[10%] pt-[8%] ml-[5%] pr-[5%]
+    id="sectionFooter"
+    class="h-1/5 w-[90%] mt-[10%] pt-[8%] ml-[5%] pr-[5%] animate-footerFadeIn
               ML:absolute ML:w-2/5 ML:top-2/3
               tablet:top-[64%] tablet:ml-[4%]
               laptop:top-[54%]
@@ -121,9 +123,16 @@ import ThemePicker from "./ThemePicker.astro";
         circle at 120%,
         black 25%,
         var(--gradient-via) 45%,
-        black 46%
+        black 50%
       );
       mix-blend-mode: hard-light;
     }
   }
 </style>
+
+<script>
+  setTimeout(function () {
+    document.getElementById("sectionNav").classList.remove("opacity-0");
+    document.getElementById("sectionFooter").classList.remove("opacity-0");
+  }, 100);
+</script>

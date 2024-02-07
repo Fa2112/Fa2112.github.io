@@ -32,10 +32,49 @@ export default {
             borderRadius: "50%"
           },
         },
+        tittleFadeIn: {
+          "0%": {
+            opacity: "0"
+          },
+          "50%": {
+            opacity: "0",
+            transform: "translateX(100px) scale(0.9)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateX(0px) scale(1)"
+          }
+        },
+        navFadeIn: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-100px) scale(0.9)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0px) scale(1)"
+          }
+        },
+          footerFadeIn: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(100px) scale(0.9)"
+
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0px) scale(1)"
+
+           
+          }
+        }
       },
       
       animation: {
         ripple: "ripple 3s linear",
+        tittleFadeIn: "tittleFadeIn 1s linear",
+        navFadeIn: "navFadeIn 0.5s linear",
+        footerFadeIn: "footerFadeIn 0.5s linear"
       }
     },
   },
