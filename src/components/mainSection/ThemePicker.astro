@@ -38,16 +38,13 @@
   </div>
 </div>
 <script>
-  let previousColor = "#ff0f48";
   function rain() {
     document.body.classList.add("rain");
     document.body.classList.remove("gold");
-    document
-      .getElementById("rainColor")
-      .classList.add(`border-[${previousColor}]`);
-    previousColor = "#3498db";
     document.getElementById("rainColor").classList.add("animate-ripple");
-
+    document.body.classList.remove("bg-black");
+    document.body.classList.remove("bg-pink-600");
+    document.body.classList.add("bg-emerald-400");
     setTimeout(function () {
       document.getElementById("rainColor").classList.remove("animate-ripple");
     }, 3000);
@@ -55,12 +52,10 @@
   function gold() {
     document.body.classList.add("gold");
     document.body.classList.remove("rain");
-    document
-      .getElementById("goldColor")
-      .classList.add(`border-[${previousColor}]`);
-    previousColor = "#00ff00";
     document.getElementById("goldColor").classList.add("animate-ripple");
-
+    document.body.classList.remove("bg-emerald-400");
+    document.body.classList.remove("bg-black");
+    document.body.classList.add("bg-pink-600");
     setTimeout(function () {
       document.getElementById("goldColor").classList.remove("animate-ripple");
     }, 3000);
@@ -68,12 +63,10 @@
   function root() {
     document.body.classList.remove("rain");
     document.body.classList.remove("gold");
-    document
-      .getElementById("rainColor")
-      .classList.add(`border-[${previousColor}]`);
-    previousColor = "#ff0f48";
     document.getElementById("rootColor").classList.add("animate-ripple");
-
+    document.body.classList.remove("bg-emerald-400");
+    document.body.classList.remove("bg-pink-600");
+    document.body.classList.add("bg-black");
     setTimeout(function () {
       document.getElementById("rootColor").classList.remove("animate-ripple");
     }, 3000);
