@@ -71,7 +71,7 @@ export default {
       },
       
       animation: {
-        ripple: "ripple 3s linear",
+        ripple: "ripple 1.5s linear",
         tittleFadeIn: "tittleFadeIn 1s linear",
         navFadeIn: "navFadeIn 0.5s linear",
         footerFadeIn: "footerFadeIn 0.5s linear"
