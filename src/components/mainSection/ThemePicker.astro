@@ -4,7 +4,7 @@
 
 <div
   id="themepickerId"
-  class="rounded-lg left-4 p-1/2 overflow-hidden absolute z-50 flex justify-center items-center aspect-square peer animate-themePickerFadeIn
+  class="rounded-lg left-4 p-1/2 !overflow-visible absolute z-50 flex justify-center items-center aspect-square peer animate-themePickerFadeIn
 				ML:top-52
 				tablet:top-[14rem] tablet:left-10
                 laptop:absolute laptop:left-[60%] laptop:top-10
@@ -48,8 +48,12 @@
     document.body.classList.remove("bg-black");
     document.body.classList.remove("bg-pink-600");
     document.body.classList.add("bg-emerald-600");
+    document.body.classList.remove("!overflow-visible");
+    document.body.classList.add("!overflow-hidden");
     setTimeout(function () {
       document.getElementById("rainColor").classList.remove("animate-ripple");
+      document.body.classList.remove("!overflow-hidden");
+      document.body.classList.add("!overflow-visible");
     }, 3000);
   }
   function gold() {
@@ -59,8 +63,13 @@
     document.body.classList.remove("bg-emerald-600");
     document.body.classList.remove("bg-black");
     document.body.classList.add("bg-pink-600");
+    document.body.classList.remove("!overflow-visible");
+    document.body.classList.add("!overflow-hidden");
+
     setTimeout(function () {
       document.getElementById("goldColor").classList.remove("animate-ripple");
+      document.body.classList.remove("!overflow-hidden");
+      document.body.classList.add("!overflow-visible");
     }, 3000);
   }
   function root() {
@@ -70,8 +79,14 @@
     document.body.classList.remove("bg-emerald-600");
     document.body.classList.remove("bg-pink-600");
     document.body.classList.add("bg-black");
+    document.body.classList.remove("!overflow-visible");
+
+    document.body.classList.add("!overflow-hidden");
+
     setTimeout(function () {
       document.getElementById("rootColor").classList.remove("animate-ripple");
+      document.body.classList.remove("!overflow-hidden");
+      document.body.classList.add("!overflow-visible");
     }, 3000);
   }
 
