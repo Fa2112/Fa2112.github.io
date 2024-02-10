@@ -22,7 +22,7 @@ export default {
       keyframes: {
         ripple: {
           "0%": {
-            opacity: "1"
+            opacity: "1",
           },
           
           "80%": {
