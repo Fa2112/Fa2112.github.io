@@ -6,7 +6,7 @@ import ThemePicker from "./ThemePicker.astro";
 
 <section
   id="landing"
-  class="w-screen h-screen !overflow-hidden ML:grid-cols-5 grid relative text-textColor mix-blend-hard-light"
+  class="w-screen h-screen ML:grid-cols-5 grid relative text-textColor mix-blend-hard-light !overflow-hidden"
 >
   <RippleSpan id="rootColor" hexColor="#ff0f48" />
   <RippleSpan id="rainColor" hexColor="#3498db" />
@@ -66,19 +66,6 @@ import ThemePicker from "./ThemePicker.astro";
   </svg>
 </section>
 <style>
-  #landing::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
-    filter: url("#texture");
-    z-index: -1;
-  }
-
   #landing {
     transition: 2s;
     background: radial-gradient(
