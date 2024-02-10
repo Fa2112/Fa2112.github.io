@@ -6,7 +6,7 @@ import ThemePicker from "./ThemePicker.astro";
 
 <section
   id="landing"
-  class="w-screen h-screen !overflow-visible ML:grid-cols-5 grid relative text-textColor mix-blend-hard-light"
+  class="w-screen h-screen !overflow-hidden ML:grid-cols-5 grid relative text-textColor mix-blend-hard-light"
 >
   <RippleSpan id="rootColor" hexColor="#ff0f48" />
   <RippleSpan id="rainColor" hexColor="#3498db" />
@@ -116,13 +116,8 @@ import ThemePicker from "./ThemePicker.astro";
 
 <script>
   document.getElementById("rainColor").classList.add("animate-ripple");
-  document.body.classList.remove("!overflow-visible");
-  document.body.classList.add("!overflow-hidden");
 
   setTimeout(function () {
     document.getElementById("rainColor").classList.remove("animate-ripple");
-    document.body.classList.remove("!overflow-hidden");
-    document.body.classList.add("!overflow-visible");
-
   }, 3000);
 </script>
