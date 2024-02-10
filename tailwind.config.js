@@ -22,7 +22,7 @@ export default {
       keyframes: {
         ripple: {
           "0%": {
-            opacity: "1",
+            opacity: "1"
           },
           
           "80%": {
@@ -34,42 +34,49 @@ export default {
         },
         tittleFadeIn: {
           "0%": {
-            transform: "translateX(100px) scale(0.9)"
+            transform: "translateX(20px) scale(0.9)",
+            filter: "blur(3px)"
           },
           "100%": {
             opacity: "1",
-            transform: "translateX(0px) scale(1)"
+            transform: "translateX(0px) scale(1)",
+            filter: "blur(0)"
           }
         },
         navFadeIn: {
           "0%": {
             opacity: "0",
-            transform: "translateY(20px) scale(0.9)"
+            transform: "translateY(20px) scale(0.9)",
+            filter: "blur(5px)"
           },
           "100%": {
             opacity: "1",
-            transform: "translateY(0px) scale(1)"
+            transform: "translateY(0px) scale(1)",
+            filter: "blur(0px)"
+
           }
         },
           footerFadeIn: {
           "0%": {
             opacity: "0",
-            transform: "translateY(-30px) scale(0.9)"
-
+            transform: "translateY(-30px) scale(0.9)",
+            filter: "blur(5px)"
           },
           "100%": {
             opacity: "1",
-            transform: "translateY(0px) scale(1)"
-
+            transform: "translateY(0px) scale(1)",
+            filter: "blur(0px)"
            
           }
         },
         themePickerFadeIn: {
           "0%": {
             opacity: "0",
+            filter: "blur(5px)"
           },
           "100%": {
             opacity: "1",
+            filter: "blur(0px)"
           }
         }
       },

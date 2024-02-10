@@ -6,7 +6,7 @@ import ThemePicker from "./ThemePicker.astro";
 
 <section
   id="landing"
-  class="w-screen h-screen overflow-hidden ML:grid-cols-5 grid relative text-textColor"
+  class="w-screen h-screen overflow-hidden ML:grid-cols-5 grid relative text-textColor mix-blend-hard-light "
 >
   <RippleSpan id="rootColor" hexColor="#ff0f48" />
   <RippleSpan id="rainColor" hexColor="#3498db" />
@@ -87,7 +87,6 @@ import ThemePicker from "./ThemePicker.astro";
       var(--gradient-via) 55%,
       black 75%
     );
-    mix-blend-mode: hard-light;
   }
 
   @media (min-width: 768px) {
