@@ -34,10 +34,6 @@ export default {
         },
         tittleFadeIn: {
           "0%": {
-            opacity: "0"
-          },
-          "50%": {
-            opacity: "0",
             transform: "translateX(100px) scale(0.9)"
           },
           "100%": {
@@ -48,7 +44,7 @@ export default {
         navFadeIn: {
           "0%": {
             opacity: "0",
-            transform: "translateY(-100px) scale(0.9)"
+            transform: "translateY(20px) scale(0.9)"
           },
           "100%": {
             opacity: "1",
@@ -58,7 +54,7 @@ export default {
           footerFadeIn: {
           "0%": {
             opacity: "0",
-            transform: "translateY(100px) scale(0.9)"
+            transform: "translateY(-30px) scale(0.9)"
 
           },
           "100%": {
@@ -67,14 +63,23 @@ export default {
 
            
           }
+        },
+        themePickerFadeIn: {
+          "0%": {
+            opacity: "0",
+          },
+          "100%": {
+            opacity: "1",
+          }
         }
       },
       
       animation: {
         ripple: "ripple 1.5s linear",
-        tittleFadeIn: "tittleFadeIn 1s linear",
-        navFadeIn: "navFadeIn 0.5s linear",
-        footerFadeIn: "footerFadeIn 0.5s linear"
+        tittleFadeIn: "tittleFadeIn 0.2s linear forwards",
+        navFadeIn: "navFadeIn 0.2s linear forwards",
+        themePickerFadeIn: "themePickerFadeIn 0.4s linear",
+        footerFadeIn: "footerFadeIn 0.4s linear",
       }
     },
   },

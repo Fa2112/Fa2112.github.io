@@ -6,70 +6,55 @@ import ThemePicker from "./ThemePicker.astro";
 
 <section
   id="landing"
-  class="w-screen h-screen overflow-hidden flex flex-col relative text-textColor"
+  class="w-screen h-screen overflow-hidden ML:grid-cols-5 grid relative text-textColor"
 >
   <RippleSpan id="rootColor" hexColor="#ff0f48" />
   <RippleSpan id="rainColor" hexColor="#3498db" />
   <RippleSpan id="goldColor" hexColor="#00ff00" />
 
-  <div class="h-4/5 flex flex-col ML:flex-row">
-    <nav
-      id="sectionNav"
-      class="w-full h-1/4 flex text-xs leading-3 font-data font-medium pl-[5%] animate-navFadeIn
-              MM:text-sm MM:leading-4 ML:flex-col
-              ML:w-1/5
-              ML:h-2/5 ML:relative ML:top-[0%] ML:pt-[2.5%] ML:justify-between ML:text-xs
-              
-              tablet:mt-[4%] tablet:pt-[0]
-              laptop:text-lg laptop:justify-start latpop: space-y-4"
-    >
-      <div
-        class="w-2/5 flex flex-col h-2/3 pt-4 space-y-2
-                ML:w-full ML:h-auto ML:justify-start ML:height-1/2
-                laptop:space-y-4"
+  <nav
+    id="sectionNav"
+    class="grid grid-cols-2 ML:grid-cols-1 text-xs leading-3 font-medium ML:col-span-2 p-4
+    ML:h-2/3 ML:w-2/3
+    tablet:text-sm tablet:p-10
+    laptop:text-medium"
+  >
+    <div class="grid grid-rows-2">
+      <span class="font-semibold animate-navFadeIn opacity-0"
+        >FACUNDO TALAVERA</span
       >
-        <span class="font-semibold">FACUNDO TALAVERA</span>
-        <a
-          href="#projects"
-          class="py-[0.25rem] bg-textColor text-black transition-all duration-500
-              ML:mr-[5%] ML:my-[.25rem] ML:w-full ML:px-1
-              tablet:w-full"
-          >TALK TO ME</a
-        >
-        <ThemePicker />
-      </div>
-      <div
-        class="w-3/5 pr-[5%] h-2/3 flex justify-start mt-1 flex-col text-right space-y-4
-                MM:justify-start
-                ML:w-full ML:text-left
-                tablet:mt-0
-                laptop:space-y-4"
+      <a
+        href="#projects"
+        class="animate-navFadeIn animation-delay-100 opacity-0
+        py-[0.25rem] mr-3 h-3/5 ml-0 bg-textColor flex justify-center items-center text-black transition-all duration-500
+        MM:w-3/5
+        ML:w-4/5 ML:h-4/5
+        tablet:mr-0 tablet:text-center tablet:inline-block
+        laptop:text-left laptop:px-2 laptop:h-3/5"
+        >TALK TO ME</a
       >
-        <span class="">FULL STACK DEVELOPER</span>
-        <span class="py-[0.25rem] ML:py-[0.25rem] MM:py-0 laptop:py-[0]"
-          >AVAILABLE FOR REMOTE WORK</span
-        >
-      </div>
-    </nav>
-    <div class="h-3/4 w-full flex">
-      <div class="w-1/5 ML:w-3/5"></div>
-      <Title />
     </div>
+    <div class="grid grid-rows-2 text-right
+                 ML:text-left">
+      <span class="animate-navFadeIn animation-delay-200 opacity-0"
+        >FULL STACK DEVELOPER</span
+      >
+      <span class="flex animate-navFadeIn animation-delay-300 opacity-0"
+        >AVAILABLE FOR REMOTE WORK</span
+      >
+    </div>
+  </nav>
+  <div class="w-full flex row-span-2 ML:col-span-3 justify-end">
+    <ThemePicker />
+    <div class="w-1/5 ML:w-3/5"></div>
+    <Title />
   </div>
   <div
     id="sectionFooter"
-    class="h-1/5 w-[90%] mt-[10%] pt-[8%] ml-[5%] pr-[5%] animate-footerFadeIn
-              ML:absolute ML:w-2/5 ML:top-2/3
-              tablet:top-[64%] tablet:ml-[4%]
-              laptop:top-[54%]
-              laptopL:top-[52%] laptopL:w-3/5"
+    class="animate-footerFadeIn flex items-end p-4 ML:col-span-2
+    tablet:p-10"
   >
-    <span
-      class="font-semibold pr-[5%] pt-4 text-xs uppercase
-            MM:text-sm MM:pt-0 MM:absolute MM:bottom-[2.5%]
-            ML:text-sm ML:pt-0
-            tablet:mb-4
-            laptop:text-lg laptop:pr-0"
+    <span class="laptop:text-xl"
       >I am a fullstack developer based in Misiones, Argentina who likes to
       craft digital solutions.</span
     >
@@ -131,8 +116,8 @@ import ThemePicker from "./ThemePicker.astro";
 </style>
 
 <script>
+  document.getElementById("rainColor").classList.add("animate-ripple");
   setTimeout(function () {
-    document.getElementById("sectionNav").classList.remove("opacity-0");
-    document.getElementById("sectionFooter").classList.remove("opacity-0");
-  }, 100);
+    document.getElementById("rainColor").classList.remove("animate-ripple");
+  }, 3000);
 </script>
