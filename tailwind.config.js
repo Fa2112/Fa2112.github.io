@@ -31,6 +31,9 @@ export default {
             width: "400vw",
             borderRadius: "50%"
           },
+          "100%": {
+            opacity: "0"
+          }
         },
         tittleFadeIn: {
           "0%": {
@@ -72,7 +75,7 @@ export default {
         themePickerFadeIn: {
           "0%": {
             opacity: "0",
-            filter: "blur(5px)"
+            filter: "blur(20px)"
           },
           "100%": {
             opacity: "1",
@@ -83,10 +86,11 @@ export default {
       
       animation: {
         ripple: "ripple 1.5s linear",
+        onLoadRipple: "ripple 2s linear",
         tittleFadeIn: "tittleFadeIn 0.2s linear forwards",
         navFadeIn: "navFadeIn 0.2s linear forwards",
         themePickerFadeIn: "themePickerFadeIn 0.4s linear",
-        footerFadeIn: "footerFadeIn 0.4s linear",
+        footerFadeIn: "footerFadeIn 0.4s linear forwards",
       }
     },
   },

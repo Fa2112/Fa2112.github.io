@@ -6,7 +6,7 @@ import ThemePicker from "./ThemePicker.astro";
 
 <section
   id="landing"
-  class="w-screen h-screen ML:grid-cols-5 grid relative text-textColor mix-blend-hard-light !overflow-hidden"
+  class="w-screen h-screen ML:grid-cols-5 grid relative text-textColor !overflow-hidden"
 >
   <RippleSpan id="rootColor" hexColor="#ff0f48" />
   <RippleSpan id="rainColor" hexColor="#3498db" />
@@ -20,12 +20,13 @@ import ThemePicker from "./ThemePicker.astro";
     laptop:text-medium"
   >
     <div class="grid grid-rows-2">
-      <span class="font-semibold animate-navFadeIn opacity-0"
+      <span
+        class="font-semibold animate-navFadeIn animation-delay-1000 opacity-0"
         >FACUNDO TALAVERA</span
       >
       <a
         href="#projects"
-        class="animate-navFadeIn animation-delay-100 opacity-0
+        class="animate-navFadeIn animation-delay-1100 opacity-0
         py-[0.25rem] mr-3 h-3/5 ml-0 bg-textColor flex justify-center items-center text-black transition-all duration-500
         MM:w-3/5
         ML:w-4/5 ML:h-4/5
@@ -36,10 +37,10 @@ import ThemePicker from "./ThemePicker.astro";
     </div>
     <div class="grid grid-rows-2 text-right
                  ML:text-left">
-      <span class="animate-navFadeIn animation-delay-200 opacity-0"
+      <span class="animate-navFadeIn animation-delay-1200 opacity-0"
         >FULL STACK DEVELOPER</span
       >
-      <span class="flex animate-navFadeIn animation-delay-300 opacity-0"
+      <span class="flex animate-navFadeIn animation-delay-1300 opacity-0"
         >AVAILABLE FOR REMOTE WORK</span
       >
     </div>
@@ -51,7 +52,7 @@ import ThemePicker from "./ThemePicker.astro";
   </div>
   <div
     id="sectionFooter"
-    class="animate-footerFadeIn flex items-end p-4 ML:col-span-2
+    class="animate-footerFadeIn animation-delay-1000 opacity-0 flex items-end p-4 ML:col-span-2
     tablet:p-10"
   >
     <span class="laptop:text-xl"
@@ -74,6 +75,7 @@ import ThemePicker from "./ThemePicker.astro";
       var(--gradient-via) 55%,
       black 75%
     );
+    mix-blend-mode: hard-light;
   }
 
   @media (min-width: 768px) {
@@ -84,6 +86,7 @@ import ThemePicker from "./ThemePicker.astro";
         var(--gradient-via) 55%,
         black 75%
       );
+      mix-blend-mode: hard-light;
       mix-blend-mode: hard-light;
     }
   }
@@ -102,9 +105,11 @@ import ThemePicker from "./ThemePicker.astro";
 </style>
 
 <script>
-  document.getElementById("rainColor").classList.add("animate-ripple");
+  document.getElementById("rainColor").classList.add("animate-onLoadRipple");
 
   setTimeout(function () {
-    document.getElementById("rainColor").classList.remove("animate-ripple");
+    document
+      .getElementById("rainColor")
+      .classList.remove("animate-onLoadRipple");
   }, 3000);
 </script>
