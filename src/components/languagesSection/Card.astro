@@ -1,11 +1,23 @@
 ---
-const {title, text} = Astro.props;
+const { title, text } = Astro.props;
 ---
 
- <div class=" border text-white text-center bg-black h-[30%] w-full flex flex-col">
-    <p class=" text-lg font-strong  py-[0.5rem] uppercase laptop:text-3xl laptop:py-[1rem]">{title}</p>
-    <div class="w-full grow font-data text-xs  px-[0.5rem] flex justify-center uppercase laptop:text-xlcd">{text}</div>
-    <div class="flex justify-center items-center  h-full">
-    <slot/>
-   </div>
- </div>
+<div
+  class="border text-white text-center bg-black h-[30%] w-full flex flex-col animate-tittleFadeIn"
+>
+  <p
+    class="text-lg font-strong py-[0.5rem] uppercase laptop:text-3xl laptop:py-[1rem] animate-tittleFadeIn"
+  >
+    {title}
+  </p>
+  <div
+    class="w-full grow font-data text-xs px-[0.5rem] flex justify-center uppercase laptop:text-xlcd animate-tittleFadeIn"
+  >
+    {text}
+  </div>
+  <div class="flex justify-center items-center h-full">
+    <slot />
+  </div>
+</div>
+
+<style></style>
