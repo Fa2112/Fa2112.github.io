@@ -94,7 +94,7 @@ import Project from "./Project.astro";
       const touchDelta = e.touches[0].clientX - startX,
         maxDelta = window.innerWidth / 2,
         percentage = touchDelta / maxDelta,
-        unrestrained = (currentX += percentage) * 40,
+        unrestrained = (currentX += percentage) * 75,
         nextPercentage =
           unrestrained < 0
             ? Math.max(-100, currentX + percentage)
@@ -108,7 +108,7 @@ import Project from "./Project.astro";
       document.getElementById("proyectosLabel").animate(
         {
           opacity: Math.max(
-            ((nextPercentage + 0.1) * 2 + 100) / 100,
+            ((nextPercentage + 0.1) * 4 + 100) / 100,
             0
           ).toFixed(1),
         },
