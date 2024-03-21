@@ -8,13 +8,13 @@ import Project from "./Project.astro";
 >
   <div
     id="proyectosLabel"
-    class="absolute top-1/2 left-0 translate-x-1/2 font-strong laptop:text-[8rem] leading-[8rem] text-white -translate-y-1/2"
+    class="absolute top-1/2 left-0 translate-x-1/2 font-strong laptop:text-[8rem] text-3xl leading-[8rem] text-white -translate-y-1/2"
   >
     PROJECTS
   </div>
   <div
     id="arrow"
-    class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-3/4"
+    class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-3/4 m-0 p-0"
   >
     <span class="material-symbols-outlined"> keyboard_double_arrow_left </span>
   </div>
@@ -73,7 +73,7 @@ import Project from "./Project.astro";
       const touchDelta = e.touches[0].clientX - startX,
         maxDelta = window.innerWidth / 2,
         percentage = touchDelta / maxDelta,
-        unrestrained = (currentX += percentage) * 10,
+        unrestrained = (currentX += percentage) * 20,
         nextPercentage =
           unrestrained < 0
             ? Math.max(-100, currentX + percentage)
