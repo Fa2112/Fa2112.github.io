@@ -1,0 +1,51 @@
+<section
+  id="contactSection"
+  class="w-screen h-screen relative overflow-hidden flex flex-col items-center justify-center z-20 bg-black snap-start"
+>
+  <div
+    class="h-1/3 font-data flex justify-center w-[80vw] text-center items-center text-xl text-white"
+  >
+    Lets embark on this journey together.
+  </div>
+  <div
+    class="h-1/3 font-strong flex justify-center items-center text-center text-6xl text-white overflow-hidden border-b-white border-b-2 w-[80vw]"
+  >
+    FEEL FREE TO REACH OUT!
+  </div>
+  <div
+    class="h-[80vh] flex flex-col font-data text-1xl text-white justify-start items-start w-[80vw]"
+  >
+    <div class="h-1/4 flex items-center">Email: fucatalavera98@gmail.com</div>
+    <div class="h-1/4 flex items-center">
+      <a
+        href="https://www.linkedin.com/in/facundo-talavera-30692821a/"
+        target="_blank">LinkedIn</a
+      >
+    </div>
+    <div class="h-1/4 flex items-center">
+      <a href="https://github.com/Fa2112" target="_blank">Github</a>
+    </div>
+  </div>
+
+  <svg class="absolute hidden">
+    <filter id="texture">
+      <feTurbulence type="turbulence" baseFrequency="0.65"></feTurbulence>
+    </filter>
+  </svg>
+</section>
+
+<style>
+  section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    filter: url("#texture");
+    z-index: -1;
+    mix-blend-mode: difference;
+  }
+</style>
