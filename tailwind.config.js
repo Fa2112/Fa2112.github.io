@@ -81,8 +81,51 @@ export default {
             opacity: "1",
             filter: "blur(0px)"
           }
-        }
+        },
+        cardFadeIn: {
+           "0%": {
+            transform: "translateY(30px)",
+            scale: "0.7",
+            opacity: "0",
+            filter: "blur(20px)"
+          },
+          "100%": {
+            transform: "translateY(0px)",
+            scale: "1",
+            filter: "blur(0px)",
+            opacity: "1"
+          }
+        },
+        cardFadeOut: {
+          "0%": {
+            transform: "translateY(0px)",
+            scale: "1",
+            filter: "blur(0px)",
+            opacity: "1"
+          },
+           "100%": {
+            transform: "translateY(-30px)",
+            scale: "0.7",
+            opacity: "0",
+            filter: "blur(20px)"
+          }
+        },
+          move: {
+      "0%" : {
+        backgroundPosition: " 0 50%"
       },
+
+      "50%": {
+        backgroundPosition: "100% 50%"
+      },
+
+      "100%": {
+        backgroundPosition: "0 50%"
+      }
+    }
+
+      },
+
       
       animation: {
         ripple: "ripple 1.5s linear",
@@ -91,6 +134,10 @@ export default {
         navFadeIn: "navFadeIn 0.2s linear forwards",
         themePickerFadeIn: "themePickerFadeIn 0.4s linear",
         footerFadeIn: "footerFadeIn 0.4s linear forwards",
+        cardFadeIn: "cardFadeIn 0.3s linear forwards",
+        cardFadeOut: "cardFadeOut 0.3s linear forwards",
+        projectMoving: "move 5s linear infinite "
+      
       }
     },
   },

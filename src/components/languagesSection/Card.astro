@@ -3,15 +3,16 @@ const { title, text } = Astro.props;
 ---
 
 <div
-  class="border text-white text-center bg-black h-[30%] w-full flex flex-col animate-tittleFadeIn"
+  class="border text-white text-center bg-black h-[30%] w-full flex flex-col transition duration-400 blur-lg"
+  data-observe
 >
   <p
-    class="text-lg font-strong py-[0.5rem] uppercase laptop:text-3xl laptop:py-[1rem] animate-tittleFadeIn"
+    class="text-lg font-strong py-[0.5rem] uppercase laptop:text-3xl laptop:py-[1rem]"
   >
     {title}
   </p>
   <div
-    class="w-full grow font-data text-xs px-[0.5rem] flex justify-center uppercase laptop:text-xlcd animate-tittleFadeIn"
+    class="w-full grow font-data text-xs px-[0.5rem] flex justify-center uppercase laptop:text-xl"
   >
     {text}
   </div>
@@ -19,5 +20,3 @@ const { title, text } = Astro.props;
     <slot />
   </div>
 </div>
-
-<style></style>
