@@ -15,9 +15,11 @@ const tools = "git, github, gitlabs, spline, VSC, visual studio";
 
 <section
   id="languages"
-  class="w-screen h-screen relative overflow-hidden flex flex-col justify-center items-center z-20 bg-black"
+  class="w-screen h-screen relative overflow-hidden flex flex-col justify-center items-center z-20 bg-black snap-start"
 >
-  <div class="w-[90%] h-full my-[5vw] flex flex-col text-white laptop:flex-row">
+  <div
+    class="w-[90%] h-full my-[5vw] flex flex-col text-white laptop:flex-row delay-300 duration-300"
+  >
     <div class="laptop:w-1/2 laptop:mr-[1rem] laptop:mt-[.3rem]">
       <p class="font-strong text-xl leading-5 laptop:text-6xl">
         SINCE I BEGAN MY DEV JOURNEY I'VE ENJOYED DESIGNING AND IMPLEMENTING
@@ -70,15 +72,12 @@ const tools = "git, github, gitlabs, spline, VSC, visual studio";
     -webkit-font-smoothing: antialiased;
     /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-
     /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-
     /* Support for IE. */
     font-feature-settings: "liga";
   }
 
-  
   #languages::before {
     content: "";
     position: absolute;
@@ -92,6 +91,4 @@ const tools = "git, github, gitlabs, spline, VSC, visual studio";
     z-index: -1;
     mix-blend-mode: difference;
   }
-
-  
 </style>

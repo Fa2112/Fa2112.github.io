@@ -1,9 +1,10 @@
 ---
 import MainSectionComponent from "../components/mainSection/MainSectionComponent.astro";
 import LanguagesSection from "../components/languagesSection/LanguagesSectionComponent.astro";
+import ProjectsSectionComponent from "../components/projectsSection/projectsSectionComponent.astro";
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth overscroll-none snap-y snap-mandatory">
   <head>
     <meta name="generator" content={Astro.generator} />
     <meta charset="utf-8" />
@@ -17,14 +18,57 @@ import LanguagesSection from "../components/languagesSection/LanguagesSectionCom
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
 
   <body
-    class="relative m-0 p-0 rain transition-colors duration-[1.5s] !overflow-x-hidden bg-black"
+    class="scroll-smooth relative m-0 p-0 rain transition-colors duration-[1.5s] !overflow-x-hidden bg-black overflow-y-scroll"
   >
     <MainSectionComponent />
 
     <LanguagesSection />
+
+    <ProjectsSectionComponent />
+
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.animate(
+              {
+                visibility: "visible",
+                filter: "none",
+                transform: "scale(1)",
+              },
+              {
+                duration: 400,
+                fill: "forwards",
+              }
+            );
+            entry.target.classList.remove("invisible");
+            entry.target.classList.remove("blur-lg");
+            entry.target.classList.remove("scale-75");
+          } else {
+            entry.target.animate(
+              {
+                visibility: "invisible",
+                filter: "blur(16px)",
+                transform: "scale(.75)",
+              },
+              {
+                duration: 400,
+                fill: "forwards",
+              }
+            );
+          }
+        });
+      });
+      const entries = document.querySelectorAll("[data-observe]");
+      entries.forEach((entry) => observer.observe(entry));
+    </script>
   </body>
   <style>
     html {
@@ -32,7 +76,8 @@ import LanguagesSection from "../components/languagesSection/LanguagesSectionCom
       margin: 0;
       padding: 0;
     }
-    < html {
+
+     html {
       height: 100%;
       width: 100%;
       margin: 0;
@@ -60,6 +105,14 @@ import LanguagesSection from "../components/languagesSection/LanguagesSectionCom
     .movement {
       transition: all;
       transition-duration: 500ms;
+    }
+    .material-symbols-outlined {
+      font-size: 60px;
+      font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
     }
   </style>
 </html>

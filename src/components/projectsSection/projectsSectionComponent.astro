@@ -1,0 +1,206 @@
+<section
+  id="projects"
+  class="w-screen h-screen relative overflow-hidden flex flex-col z-20 bg-black snap-start"
+>
+  <div
+    id="proyectosLabel"
+    class="absolute top-1/2 left-0 translate-x-1/2 font-strong text-7xl text-white -translate-y-3/4"
+  >
+    PROYECTOS:
+  </div>
+  <div
+    id="arrow"
+    class="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-3/4"
+  >
+    <span class="material-symbols-outlined"> keyboard_double_arrow_left </span>
+  </div>
+  <div
+    id="projects-container"
+    data-mouse-down-at="0"
+    data-percentage="0"
+    data-prev-percentage="0"
+    class="w-screen flex gap-[4vmin] left-1/2 absolute -translate-y-1/2 top-1/2 transition-transform duration-[50ms]"
+  >
+    <div class="w-[60vmin] h-[84vmin] projectElement relative">
+      <a
+        href="https://fa2112.github.io/destinos-turisticos/"
+        draggable="false"
+        target="_blank"
+      >
+        <img
+          draggable="false"
+          src="img/img2.jpg"
+          alt="Destinos turisticos"
+          class="object-cover object-center w-[240-vmin]"
+        />
+        <div
+          class="absolute text-white text-3xl w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.3)]"
+        >
+          <div
+            class="relative flex justify-center items-center w-full h-full font-data"
+          >
+            DESTINOS TURISTICOS
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="w-[60vmin] h-[84vmin] projectElement relative">
+      <a
+        href="https://fa2112.github.io/destinos-turisticos/"
+        draggable="false"
+        target="_blank"
+      >
+        <img
+          draggable="false"
+          src="img/img2.jpg"
+          alt="Destinos turisticos"
+          class="object-cover object-center w-[240-vmin]"
+        />
+        <div
+          class="absolute text-white text-3xl w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.3)]"
+        >
+          <div
+            class="relative flex justify-center items-center w-full h-full font-data"
+          >
+            DESTINOS TURISTICOS
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="w-[60vmin] h-[84vmin] projectElement relative">
+      <a
+        href="https://fa2112.github.io/destinos-turisticos/"
+        draggable="false"
+        target="_blank"
+      >
+        <img
+          draggable="false"
+          src="img/img2.jpg"
+          alt="Destinos turisticos"
+          class="object-cover object-center w-[240-vmin]"
+        />
+        <div
+          class="absolute text-white text-3xl w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.3)]"
+        >
+          <div
+            class="relative flex justify-center items-center w-full h-full font-data"
+          >
+            DESTINOS TURISTICOS
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="w-[60vmin] h-[84vmin] projectElement relative">
+      <a
+        href="https://fa2112.github.io/destinos-turisticos/"
+        draggable="false"
+        target="_blank"
+      >
+        <img
+          draggable="false"
+          src="img/img2.jpg"
+          alt="Destinos turisticos"
+          class="object-cover object-center w-[240-vmin]"
+        />
+        <div
+          class="absolute text-white text-3xl w-full h-full left-0 top-0 bg-[rgba(0,0,0,0.3)]"
+        >
+          <div
+            class="relative flex justify-center items-center w-full h-full font-data"
+          >
+            DESTINOS TURISTICOS
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <style>
+    .projectElement a img {
+      width: 240vmin;
+      height: 84vmin;
+      object-fit: cover;
+      object-position: right center;
+    }
+    .material-symbols-outlined {
+      color: white;
+    }
+  </style>
+  <script>
+    const projectsContainer = document.getElementById("projects-container");
+    const links = document.querySelectorAll("a");
+    const ableLinks = function () {
+      setTimeout(() => {
+        links.forEach((link) => {
+          link.style.pointerEvents = "auto";
+        });
+      }, 10);
+    };
+    window.onmousedown = (e: MouseEvent) => {
+      projectsContainer.dataset.mouseDownAt = "" + e.clientX + "";
+    };
+    window.onmouseup = (e: MouseEvent) => {
+      projectsContainer.dataset.mouseDownAt = "0";
+      projectsContainer.dataset.prevPercentage =
+        projectsContainer.dataset.percentage;
+
+      ableLinks();
+    };
+
+    window.onmousemove = (e: MouseEvent) => {
+      if (projectsContainer.dataset.mouseDownAt === "0") return;
+
+      const mouseDelta =
+          parseFloat(projectsContainer.dataset.mouseDownAt) - e.clientX,
+        maxDelta = window.innerWidth / 2,
+        percentage = (mouseDelta / maxDelta) * -100,
+        unrestrained =
+          parseFloat(projectsContainer.dataset.prevPercentage) + percentage,
+        nextPercentage =
+          unrestrained < 0
+            ? Math.max(
+                -100,
+                parseFloat(projectsContainer.dataset.prevPercentage) +
+                  percentage
+              )
+            : Math.min(
+                0,
+                parseFloat(projectsContainer.dataset.prevPercentage) +
+                  percentage
+              );
+
+      links.forEach((link) => {
+        link.style.pointerEvents = "none";
+      });
+
+      projectsContainer.dataset.percentage = nextPercentage + "";
+      // console.log(
+      //   `percentage: ${percentage} prevPercentage: ${projectsContainer.dataset.prevPercentage} translate( ${nextPercentage}%, 50%)`
+      // );
+      projectsContainer.animate(
+        { transform: `translate( ${nextPercentage}%, -50%)` },
+        { duration: 1200, fill: "forwards" }
+      );
+      console.log(Math.max((nextPercentage * 4 + 100) / 100, 0).toFixed(1));
+      document.getElementById("proyectosLabel").animate(
+        {
+          opacity: Math.max((nextPercentage * 2 + 100) / 100, 0).toFixed(1),
+        },
+        { duration: 100, fill: "forwards" }
+      );
+      document.getElementById("arrow").animate(
+        {
+          opacity: Math.max((nextPercentage * 4 + 100) / 100, 0).toFixed(1),
+        },
+        { duration: 100, fill: "forwards" }
+      );
+      for (const project of projectsContainer.querySelectorAll("img")) {
+        project.animate(
+          { objectPosition: `${nextPercentage + 100}% 50%` },
+          { duration: 2000, fill: "forwards" }
+        );
+      }
+    };
+    window.onwheel = (e: Event) => {};
+  </script>
+</section>
