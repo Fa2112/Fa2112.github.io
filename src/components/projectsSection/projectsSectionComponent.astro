@@ -144,7 +144,6 @@ import Project from "./Project.astro";
           unrestrained < 0
             ? Math.max(-100, unrestrained)
             : Math.min(0, unrestrained);
-      console.log(unrestrained);
       links.forEach((link) => {
         link.style.pointerEvents = "none";
       });
